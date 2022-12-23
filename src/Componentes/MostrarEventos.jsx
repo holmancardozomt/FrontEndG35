@@ -5,13 +5,14 @@ import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import img1 from '../Img/Mundial1.jpg';
+import { FaTrashAlt, FaRegEdit } from 'react-icons/fa';
 
 // URL MOSTRAR TODOS LOS EVENTOS DEPORTIVOS
 const URI = 'http://localhost:8000/mostrareventos/'
 
 export const CompMostrarEventos = () => {
 
-   //ACÁ INICIA EL CÓDIGO QUE ENVÍA EL ENCABEZADO DEL TOKEN
+    //ACÁ INICIA EL CÓDIGO QUE ENVÍA EL ENCABEZADO DEL TOKEN
     const token1 = localStorage.getItem("auth")
     const token = `${token1}`;
     const beer = "Bearer"
@@ -24,13 +25,13 @@ export const CompMostrarEventos = () => {
         }
     };
 
-  //ACÁ FINALIZA
+    //ACÁ FINALIZA
 
     const [ceventos, setEventos] = useState([])
 
     useEffect(() => {
         ObtenerEventos()
-    }, )
+    },)
 
 
     //PROCEDIMIENTO PARA MOSTRAR TODOS LOS REGISTROS
@@ -39,7 +40,7 @@ export const CompMostrarEventos = () => {
         setEventos(res.data)
     }
 
-   //PROCEDIMIENTO PARA ELIMINAR UN REGISTRO
+    //PROCEDIMIENTO PARA ELIMINAR UN REGISTRO
     const deleteEventos = async (id) => {
         await axios.delete(`${URI}${id}`)
         ObtenerEventos()
@@ -76,8 +77,10 @@ export const CompMostrarEventos = () => {
                                                 <td > {blog.marcador2} </td>
                                                 <td > {blog.tipoevento} </td>
                                                 <td>
-                                                    <Link to={`/editareventos/${blog._id}`} >Editar</Link>
-                                                    <Button type="submit" onClick={() => deleteEventos(blog._id)} >Delete</Button>
+                                                    <Link to={`/editareventos/${blog._id}`} > <FaRegEdit size="30" color="white" /></Link>
+                                                </td>
+                                                <td>
+                                                    <Button type="submit" onClick={() => deleteEventos(blog._id)} ><FaTrashAlt /></Button>
 
                                                 </td>
                                             </tr>

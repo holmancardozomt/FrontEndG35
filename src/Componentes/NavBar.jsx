@@ -9,7 +9,7 @@ export const Navbareventos = () => {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand as={Link} to={'/'}>Eventos Deportivos</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
 
@@ -23,15 +23,15 @@ export const Navbareventos = () => {
                 <NavDropdown.Item as={Link} to={'/crearevento'}>Crear Evento</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={'/mostrareventos'}>Mostrar Eventos</NavDropdown.Item>
                 
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">  </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                  
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">Información</Nav.Link>
+              <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
                 Contactenos
               </Nav.Link>

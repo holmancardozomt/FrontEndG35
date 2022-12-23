@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const URI = 'http://localhost:8000/shuser/'
+const URI2 = 'http://localhost:8000/upuser/'
 
 
 export const CompEditarUsuario = () => {
@@ -15,12 +16,12 @@ export const CompEditarUsuario = () => {
     //procedimiento para actualizar
     const onSubmit = async (e) => {
         e.preventDefault()
-        await axios.put(URI+id, {
+        await axios.put(URI2+id, {
             nomuser: nomuser,
             correo: correo,
             password: password
         })
-        navigate('/users')
+        navigate('/usuarios')
     }
 
   
@@ -34,7 +35,7 @@ export const CompEditarUsuario = () => {
 
     useEffect( ()=>{
         getBlogById()
-     } )
+     },[ ] )
     return (
         <div>
         <h3>Editar Usuario</h3>

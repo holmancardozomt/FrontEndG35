@@ -5,12 +5,13 @@ import img1 from '../Img/Mundial2.jpg'
 import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { FaTrashAlt, FaRegEdit, FaPlusCircle } from 'react-icons/fa';
+import { FaTrashAlt, FaRegEdit } from 'react-icons/fa';
 
 //import styles from "./styles.module.css";
 
 // URL MOSTRAR USUARIOS
 const URI = 'http://localhost:8000/shuser/'
+const URI2 = 'http://localhost:8000/delete/'
 
 export const CompShowUsers = () => {
 
@@ -42,14 +43,14 @@ export const CompShowUsers = () => {
 
    //PROCEDIMIENTO PARA ELIMINAR UN REGISTRO
     const deleteBlog = async (_id) => {
-        await axios.delete(`${URI}${_id}`)
+        await axios.delete(`${URI2}${_id}`)
         ObtenerUsuarios()
     }
     return (
         <div className="">
             <div >
                 <div>
-                    <Link to="/create" className='btn btn-primary mt-2 mb-2'><FaPlusCircle size="30" color="red" /></Link>
+                    <Link to="/create" className='btn btn-primary mt-2 mb-2'>Crear Usuario</Link>
                     <center>
                         <Card style={{ width: '60rem' }}>
                             <Card.Body>

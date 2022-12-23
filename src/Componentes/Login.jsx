@@ -78,6 +78,7 @@ export const Login = () => {
                             value={body.correo}
                             onChange={inputChange}
                             name="correo"
+
                         />
                         <Form.Control type="password"
                             placeholder="Password"
@@ -85,10 +86,12 @@ export const Login = () => {
                             onChange={inputChange}
                             name="password"
                         />
-                        <Button className="" onClick={onSubmit} type="submit" >
-                            Login
-                        </Button>
+
+                        <Button className="" onClick={onSubmit} type="submit">Login</Button>
+                        <td>
                         <Link to="/create" className='btn-register'>Registrar</Link>
+                        </td>
+                       
                     </Form>
                 </Card.Body>
             </Card>

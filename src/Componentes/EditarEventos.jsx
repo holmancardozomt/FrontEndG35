@@ -49,7 +49,7 @@ export const CompEditarEventos = () => {
     }
     useEffect(() => {
         getBlogById()
-    },)
+    },[ ])
     return (
 
         <div className="login-form">
